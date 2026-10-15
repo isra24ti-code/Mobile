@@ -32,8 +32,8 @@ class SplashScreenActivity : AppCompatActivity() {
             val isLogin = sharedPref.getBoolean("isLogin", false)
 
             if (isLogin) {
-                // Jika isLogin true -> Arahkan ke MainActivity
-                val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+                // DIUBAH: Jika isLogin true -> Arahkan ke BaseActivity (Bottom Navigation)
+                val intent = Intent(this@SplashScreenActivity, BaseActivity::class.java)
                 startActivity(intent)
             } else {
                 // Jika isLogin false -> Arahkan ke AuthActivity

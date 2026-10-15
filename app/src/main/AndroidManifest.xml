@@ -14,16 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.P3Isra">
 
-        <!-- SplashScreenActivity DITETAPKAN SEBAGAI HALAMAN PERTAMA SAAT APP DIBUKA -->
+        <!-- Opsi A: Langsung jadikan BaseActivity sebagai halaman pertama -->
         <activity
-            android:name=".SplashScreenActivity"
-            android:exported="true">
+            android:name=".BaseActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="false" />
         <activity
             android:name=".AuthActivity"
             android:exported="false" />
@@ -31,33 +35,32 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_3.ThirdActivity"
+            android:name=".Home.pertemuan_3.ThirdActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".pertemuan_3.ThirdResultActivity"
+            android:name=".Home.pertemuan_3.ThirdResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".pertemuan_4.FourthActivity"
+            android:name=".Home.pertemuan_4.FourthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".pertemuan_5.FifthActivity"
+            android:name=".Home.pertemuan_5.FifthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".pertemuan_5.WebViewActivity"
+            android:name=".Home.pertemuan_5.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".activity_profile_developer"
+            android:name=".Home.pertemuan_7.SevenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ProfileDeveloperActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Fragment (HomeFragment, MessageFragment, MoreFragment) TIDAK boleh ditaruh di Manifest -->
+
     </application>
 
 </manifest>

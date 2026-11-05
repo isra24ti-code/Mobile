@@ -9,8 +9,8 @@ import androidx.fragment.app.Fragment
 import com.example.p3isra.Home.pertemuan_4.FourthActivity
 import com.example.p3isra.Home.pertemuan_5.FifthActivity
 import com.example.p3isra.Home.pertemuan_7.SevenActivity
+import com.example.p3isra.Home.pertemuan_10.TenthActivity
 import com.example.p3isra.databinding.ActivityHomeFragmentBinding
-import kotlin.jvm.java
 
 class HomeFragment : Fragment() {
 
@@ -18,8 +18,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = ActivityHomeFragmentBinding.inflate(inflater, container, false)
@@ -29,18 +28,27 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Navigasi ke Pertemuan 4
         binding.btnPertemuan4.setOnClickListener {
             val intent = Intent(requireContext(), FourthActivity::class.java)
             startActivity(intent)
         }
 
+        // Navigasi ke Pertemuan 5
         binding.btnPertemuan5.setOnClickListener {
             val intent = Intent(requireContext(), FifthActivity::class.java)
             startActivity(intent)
         }
 
+        // Navigasi ke Pertemuan 7
         binding.btnPertemuan7.setOnClickListener {
             val intent = Intent(requireContext(), SevenActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Navigasi ke Pertemuan 10
+        binding.btnPertemuan10.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
     }

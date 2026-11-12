@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Text Title / Welcome (Opsional jika ingin ada judul di dalam header) -->
+    <!-- Text Title / Welcome -->
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Tombol Pertemuan 4 (Diposisikan di bawah background_header) -->
+    <!-- Tombol Pertemuan 4 (Biru) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPertemuan4"
         android:layout_width="0dp"
@@ -38,11 +38,13 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="30dp"
         android:text="Pertemuan 4"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#1E88E5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/background_header" />
 
-    <!-- Tombol Pertemuan 5 -->
+    <!-- Tombol Pertemuan 5 (Hijau Tosca) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPertemuan5"
         android:layout_width="0dp"
@@ -50,11 +52,13 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="10dp"
         android:text="Pertemuan 5"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#00897B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnPertemuan4" />
 
-    <!-- Tombol Pertemuan 7 -->
+    <!-- Tombol Pertemuan 7 (Oranye) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPertemuan7"
         android:layout_width="0dp"
@@ -62,11 +66,13 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="10dp"
         android:text="Pertemuan 7"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#FB8C00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnPertemuan5" />
 
-    <!-- Tombol Pertemuan 10 -->
+    <!-- Tombol Pertemuan 10 (Ungu) -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnPertemuan10"
         android:layout_width="0dp"
@@ -74,8 +80,24 @@
         android:layout_marginHorizontal="35dp"
         android:layout_marginTop="10dp"
         android:text="Pertemuan 10"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#8E24AA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnPertemuan7" />
+
+    <!-- Tombol Pertemuan 11 (Merah Coral) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnPertemuan11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginTop="10dp"
+        android:text="Pertemuan 11"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#E53935"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnPertemuan10" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

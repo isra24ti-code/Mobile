@@ -11,6 +11,7 @@ import com.example.p3isra.Home.pertemuan_5.FifthActivity
 import com.example.p3isra.Home.pertemuan_7.SevenActivity
 import com.example.p3isra.Home.pertemuan_10.TenthActivity
 import com.example.p3isra.databinding.ActivityHomeFragmentBinding
+import com.example.p3isra.pertemuan_11.EleventhActivity
 
 class HomeFragment : Fragment() {
 
@@ -49,6 +50,12 @@ class HomeFragment : Fragment() {
         // Navigasi ke Pertemuan 10
         binding.btnPertemuan10.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+        // Navigasi ke Pertemuan 11
+        // Navigasi ke Pertemuan 11
+        binding.btnPertemuan11.setOnClickListener {
+            val intent = Intent(requireContext(), EleventhActivity::class.java)
             startActivity(intent)
         }
     }

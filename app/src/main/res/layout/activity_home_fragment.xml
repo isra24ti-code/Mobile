@@ -1,129 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <!-- Header Background Wave (Artistik) -->
-    <View
-        android:id="@+id/background_header"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:background="@drawable/bg_header_wave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Text Title / Welcome -->
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Welcome!"
-        android:textColor="@android:color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Tombol Pertemuan 4 (Biru) -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPertemuan4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginTop="30dp"
-        android:text="Pertemuan 4"
-        android:textColor="@android:color/white"
-        app:backgroundTint="#1E88E5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/background_header" />
-
-    <!-- Tombol Pertemuan 5 (Hijau Tosca) -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPertemuan5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginTop="10dp"
-        android:text="Pertemuan 5"
-        android:textColor="@android:color/white"
-        app:backgroundTint="#00897B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPertemuan4" />
-
-    <!-- Tombol Pertemuan 7 (Oranye) -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPertemuan7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginTop="10dp"
-        android:text="Pertemuan 7"
-        android:textColor="@android:color/white"
-        app:backgroundTint="#FB8C00"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPertemuan5" />
-
-    <!-- Tombol Pertemuan 10 (Ungu) -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPertemuan10"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginTop="10dp"
-        android:text="Pertemuan 10"
-        android:textColor="@android:color/white"
-        app:backgroundTint="#8E24AA"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPertemuan7" />
-
-    <!-- Tombol Pertemuan 11 (Merah Coral) -->
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPertemuan11"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginTop="10dp"
-        android:text="Pertemuan 11"
-        android:textColor="@android:color/white"
-        app:backgroundTint="#E53935"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPertemuan10" />
-
-    <!-- TextView Cat Fact -->
-    <TextView
-        android:id="@+id/tvCatFact"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="24dp"
-        android:gravity="center"
-        android:text="Loading cat fact..."
-        android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnPertemuan11" />
+        android:paddingBottom="24dp">
 
-    <!-- Button Refresh -->
-    <Button
-        android:id="@+id/btnRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Refresh"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvCatFact" />
+        <!-- Text Title / Welcome -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Welcome!"
+            android:textColor="#3E3B47"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Subjudul Silahkan pilih... -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Silahkan pilih..."
+            android:textColor="#555555"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+
+        <!-- Baris 1: Pertemuan 4 (Kiri) & Pertemuan 5 (Kanan) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPertemuan4"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="6dp"
+            android:text="Pertemuan 4"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#1E88E5"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnPertemuan5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPertemuan5"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="24dp"
+            android:text="Pertemuan 5"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#00897B"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnPertemuan4"
+            app:layout_constraintTop_toTopOf="@id/btnPertemuan4" />
+
+        <!-- Baris 2: Pertemuan 7 (Kiri) & Pertemuan 10 (Kanan) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPertemuan7"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="6dp"
+            android:text="Pertemuan 7"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#FB8C00"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnPertemuan10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnPertemuan4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPertemuan10"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="24dp"
+            android:text="Pertemuan 10"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#8E24AA"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnPertemuan7"
+            app:layout_constraintTop_toTopOf="@id/btnPertemuan7" />
+
+        <!-- Baris 3: Pertemuan 11 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPertemuan11"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:text="Pertemuan 11"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#E53935"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="@id/btnPertemuan7"
+            app:layout_constraintStart_toStartOf="@id/btnPertemuan7"
+            app:layout_constraintTop_toBottomOf="@id/btnPertemuan7" />
+
+        <!-- TextView Cat Fact -->
+        <TextView
+            android:id="@+id/tvCatFact"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="28dp"
+            android:gravity="center"
+            android:text="Loading cat fact..."
+            android:textAlignment="center"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnPertemuan11" />
+
+        <!-- Button Refresh -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingHorizontal="28dp"
+            android:text="Refresh"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#5E4B9B"
+            app:cornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCatFact" />
+
+        <!-- RecyclerView Gallery Foto (Grid 2 Kolom) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="20dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnRefresh"
+            app:spanCount="2"
+            tools:listitem="@layout/item_photo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

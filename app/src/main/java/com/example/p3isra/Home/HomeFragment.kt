@@ -5,16 +5,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.p3isra.Home.data.api.CatFactApiClient
+import com.example.p3isra.Home.data.api.PhotoApiClient
 import com.example.p3isra.Home.pertemuan_4.FourthActivity
 import com.example.p3isra.Home.pertemuan_5.FifthActivity
 import com.example.p3isra.Home.pertemuan_7.SevenActivity
 import com.example.p3isra.Home.pertemuan_10.TenthActivity
+import com.example.p3isra.Home.photo.PhotoAdapter
 import com.example.p3isra.databinding.ActivityHomeFragmentBinding
 import com.example.p3isra.pertemuan_11.EleventhActivity
 import kotlinx.coroutines.launch
+import androidx.recyclerview.widget.GridLayoutManager
 
 class HomeFragment : Fragment() {
 
@@ -62,13 +67,16 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        // Muat Cat Fact saat halaman dibuka[cite: 6]
+        // Muat Cat Fact saat halaman dibuka
         loadCatFact()
 
-        // Muat ulang Cat Fact saat tombol Refresh diklik[cite: 6]
+        // Muat ulang Cat Fact saat tombol Refresh diklik
         binding.btnRefresh.setOnClickListener {
             loadCatFact()
         }
+
+        // Muat daftar foto ke RecyclerView
+        loadPhoto()
     }
 
     private fun loadCatFact() {
@@ -78,6 +86,21 @@ class HomeFragment : Fragment() {
                 binding.tvCatFact.text = "\"${response.fact}\""
             } catch (e: Exception) {
                 binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+        }
+    }
+
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                // Menampilkan 2 kolom (grid) seperti di gambar
+                binding.rvGallery.layoutManager = GridLayoutManager(requireContext(), 2)
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
             }
         }
     }

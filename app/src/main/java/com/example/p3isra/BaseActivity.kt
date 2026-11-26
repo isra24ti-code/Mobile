@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.p3isra.Home.HomeFragment
 import com.example.p3isra.Message.MessageFragment
 import com.example.p3isra.More.MoreFragment
+import com.example.p3isra.Note.NoteFragment
 import com.example.p3isra.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -45,6 +46,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false

@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.p3isra.Home.data.api.CatFactApiClient
 import com.example.p3isra.Home.data.api.PhotoApiClient
 import com.example.p3isra.Home.pertemuan_4.FourthActivity
@@ -19,7 +19,6 @@ import com.example.p3isra.Home.photo.PhotoAdapter
 import com.example.p3isra.databinding.ActivityHomeFragmentBinding
 import com.example.p3isra.pertemuan_11.EleventhActivity
 import kotlinx.coroutines.launch
-import androidx.recyclerview.widget.GridLayoutManager
 
 class HomeFragment : Fragment() {
 
@@ -80,27 +79,31 @@ class HomeFragment : Fragment() {
     }
 
     private fun loadCatFact() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val response = CatFactApiClient.apiService.getCatFact()
-                binding.tvCatFact.text = "\"${response.fact}\""
+                _binding?.tvCatFact?.text = "\"${response.fact}\""
             } catch (e: Exception) {
-                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+                _binding?.tvCatFact?.text = "Gagal mengambil fakta kucing."
             }
         }
     }
 
     private fun loadPhoto() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val photos = PhotoApiClient.apiService.getPhotos()
                 val adapter = PhotoAdapter(photos)
-                binding.rvGallery.adapter = adapter
+                _binding?.rvGallery?.adapter = adapter
 
                 // Menampilkan 2 kolom (grid) seperti di gambar
-                binding.rvGallery.layoutManager = GridLayoutManager(requireContext(), 2)
+                context?.let { ctx ->
+                    _binding?.rvGallery?.layoutManager = GridLayoutManager(ctx, 2)
+                }
             } catch (e: Exception) {
-                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+                context?.let { ctx ->
+                    Toast.makeText(ctx, "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

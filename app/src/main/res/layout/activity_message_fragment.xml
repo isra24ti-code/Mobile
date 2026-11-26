@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="#5062A4"
             app:title="Message"
             app:titleTextColor="@android:color/white"
             app:layout_scrollFlags="scroll|enterAlways" />
